@@ -6,7 +6,7 @@ interface NavBarProps {
 
 export default function NavBar(props: NavBarProps) {
     const { active } = props;
-    const activeClass = "border-b-4 border-pink-600"
+    const activeClass = "border-b-4 border-primary pb-2"
 
     const links = [
         { text: "Dashboard", href: "/dashboard" },
@@ -20,10 +20,10 @@ export default function NavBar(props: NavBarProps) {
                 <h1 className="text w-3xl font-bold">CashUp</h1>
                 <ul className="flex gap-4">
                     {links.map(link =>
-                        <li className={active === link.text ? activeClass : ""} ><Link href={link.href} >{link.text}</Link></li>)
+                        <li key={link.text} className={active === link.text ? activeClass : ""} ><Link href={link.href} >{link.text}</Link></li>)
                     }
                 </ul>
-                <img className="size-12 rounded-full" src="http://github.com/Caepena.png" alt="" />
+                <img className="size-12 rounded-full" src="http://github.com/vitin46.png" alt="" />
             </nav>
         </>
     )
